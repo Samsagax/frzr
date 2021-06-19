@@ -91,3 +91,9 @@ else
 fi
 
 parted ${DISK} set 1 boot on
+
+# Post install steps for system configuration
+# If the script exists then call it as is
+if [ -f "./frzr-postinstall" ]; then
+    ./frzr-postinstall
+fi
